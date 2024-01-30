@@ -20,24 +20,24 @@
 
         <TextView
             android:id="@+id/AccelerometerData"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/accelerometerData"
+            android:text="@string/accelerometerData1"
             android:layout_marginTop="20dp"
             android:layout_gravity="top|center_horizontal"
             android:gravity="center" />
         <TextView
             android:id="@+id/AccelerometerData2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/accelerometerData"
+            android:text="@string/accelerometerData2"
             android:layout_gravity="center"
             android:gravity="center" />
         <TextView
             android:id="@+id/AccelerometerData3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/accelerometerData"
+            android:text="@string/accelerometerData3"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginBottom="20dp"
             android:gravity="center" />

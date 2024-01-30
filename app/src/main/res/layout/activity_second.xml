@@ -8,8 +8,8 @@
     tools:context=".ShakeActivity">
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_width="210dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,14 @@
             android:id="@+id/instructionsText"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="" />
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Test"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="20sp"
+            android:layout_margin="10dp"
+            android:textStyle="normal" />
 
 
 

@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="accelerometerData">Accelerometer</string>
+    <string name="accelerometerData1">X: %1$s</string>
+    <string name="accelerometerData2">Y: %1$s</string>
+    <string name="accelerometerData3">Z: %1$s</string>
     <string name="vibeText">Shake phone to vibrate</string>
-    <string name="volumeText">Tilt phone to change sound volume</string>
+    <string name="volumeText">Tilt phone to change volume</string>
+    <string name="play_room">Play room</string>
+    <string name="accelerometer">Accelerometer</string>
 </resources>

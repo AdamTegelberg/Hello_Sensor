@@ -28,17 +28,11 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
     }
     @Override
     public void onSensorChanged(SensorEvent event) {
-        String value1 = String.valueOf(event.values[0]);
-        String value2 = String.valueOf(event.values[1]);
-        String value3 = String.valueOf(event.values[2]);
 
-        TextView textX = findViewById(R.id.AccelerometerData);
-        TextView textY = findViewById(R.id.AccelerometerData2);
-        TextView textZ = findViewById(R.id.AccelerometerData3);
+        setAccelerometerText(String.valueOf(event.values[0]),findViewById(R.id.AccelerometerData),R.string.accelerometerData1 );
+        setAccelerometerText(String.valueOf(event.values[1]),findViewById(R.id.AccelerometerData2),R.string.accelerometerData2 );
+        setAccelerometerText(String.valueOf(event.values[2]),findViewById(R.id.AccelerometerData3),R.string.accelerometerData3 );
 
-        textX.setText(value1);
-        textY.setText(value2);
-        textZ.setText(value3);
     }
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy){
@@ -48,5 +42,21 @@ public class AccelerometerActivity extends AppCompatActivity implements SensorEv
     protected void onResume() {
         super.onResume();
         sensorManager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sensorManager.unregisterListener(this);
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        sensorManager.unregisterListener(this);
+    }
+
+
+    public void setAccelerometerText(String value, TextView textView, int stringRes) {
+        textView.setText(getString(stringRes, value));
     }
 }
