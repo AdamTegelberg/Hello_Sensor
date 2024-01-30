@@ -12,7 +12,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.view.View;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,9 +49,31 @@ public class ShakeActivity extends AppCompatActivity implements SensorEventListe
 
         audioManager = (AudioManager) getApplicationContext().getSystemService(Context.AUDIO_SERVICE);
 
-
         vibeButton = findViewById(R.id.radio_vibrate);
         volumeButton = findViewById(R.id.radio_volume);
+
+        TextView tv = findViewById(R.id.instructionsText);
+        tv.setText(R.string.vibeText);
+
+        View.OnClickListener radioClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView tv = findViewById(R.id.instructionsText);
+                int str = 0;
+
+                if (vibeButton.isChecked()) {
+                    str = R.string.vibeText;
+                } else if (volumeButton.isChecked()) {
+                    str = R.string.volumeText;
+                }
+                tv.setText(str);
+            }
+        };
+
+        vibeButton.setOnClickListener(radioClickListener);
+        volumeButton.setOnClickListener(radioClickListener);
+
+        vibeButton.setChecked(true);
 
     }
 
